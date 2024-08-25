@@ -11,9 +11,9 @@ function App() {
   const handleSubmit = async () => {
     try {
       const parsedJson = JSON.parse(jsonInput);
-      const res = await axios.post('http://localhost:5000/bfhl', parsedJson);
+      const res = await axios.post('https://api-backend-j2tz.onrender.com/bfhl', parsedJson);
       setResponse(res.data);
-      setError('');  // Clear any previous errors
+      setError('');
     } catch (error) {
       setError('Invalid JSON or request failed');
       setResponse(null);
